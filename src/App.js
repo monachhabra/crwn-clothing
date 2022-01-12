@@ -1,13 +1,11 @@
 import './App.css';
-import HomePage from './pages/homepage/homepage.components';
 import {Route, Routes} from 'react-router-dom'
+import React from 'react';
+
+import HomePage from './pages/homepage/homepage.components';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.components';
-// const HatsPage =()=>(
-//   <div>
-//     <h1>Hats Page</h1>
-//   </div>
-// );
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.components';
 
 function App() {
   return (
@@ -15,7 +13,8 @@ function App() {
       <Header/>
       <Routes>
       <Route exact path='/' element={<HomePage/>}/>
-      <Route path='/shop' element={<ShopPage/>}></Route>
+      <Route path='/shop' element={<ShopPage/>}/>
+      <Route path='/signin' element={<SignInAndSignUpPage/>}/>
       </Routes>
     </div>
   );
