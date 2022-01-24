@@ -75,36 +75,5 @@ action ----- dispatcher ----- store ----- view
 dispatcher : dispatches the action to the store which updates the view(one way data flow)
 
 yarn add redux redux-logger react-redux 
-redux-logger - middleware
 
 
-Provider : is the parent component that wrap around the entire application. allows to access related to store 
-
-root-reducer.js : base reducer object that represents all the states (combine all other states together)
-
-a reducer is function that get two properties:
-1. a state object(intial state)
-2. action : that has type which is of string value, having payload also 
-
-combineReducers is used for combine the multiple reducer at one place that is root reducer
-create a store - import createStore and applyMiddleware from redux
-import logger from redux-logger
-import root-reducer 
-
-store is created using createStore() that accepts rootreducer and the applyMiddleware(spread in all middleware)
-action creator: user.action.js
-
-currently header component getting currentUser from app component but we dont want that, pull that from reducer
-
-connect()-  higher order component that lets us modify our component to have access related to redux
-a higher order component is a function that take component as arguments and return a new component 
-1.mapStateToProps-having state that is the root reducer
-2.mapDispatchToProps - 
-
-testing example:
-mkdir test
-cd test
-npm init -y
-create script.js
-jest : npm install jest
-npm install --save-dev jest
