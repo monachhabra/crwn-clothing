@@ -1,5 +1,5 @@
 import './App.css';
-import {Route, Routes} from 'react-router-dom'
+import {Route, Routes,Navigate} from 'react-router-dom'
 import React from 'react';
 
 import HomePage from './pages/homepage/homepage.components';
@@ -42,17 +42,22 @@ class App extends React.Component {
       <Routes>
       <Route exact path='/' element={<HomePage/>}/>
       <Route path='/shop' element={<ShopPage/>}/>
-      <Route path='/signin' element={<SignInAndSignUpPage/>}/>
+      <Route exact path='/signin' render={()=> this.props.currentUser ? (<Navigate to="/"></Navigate>):<SignInAndSignUpPage/>}/>
       </Routes>
     </div>
   );
 }
 }
 
+const mapStateToProps = ({user}) =>({
+  currentUser : user.currentUser
+}
+)
+
 const mapDispatchToProps = dispatch =>({
     setCurrentUser: user=>dispatch(setCurrentUser(user))
 }
 
 )
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
  
