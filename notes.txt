@@ -101,6 +101,15 @@ a higher order component is a function that take component as arguments and retu
 1.mapStateToProps-having state that is the root reducer
 2.mapDispatchToProps - 
 
+
+render - in routing determines what component to return.
+Redirect is replaced by Navigate in ES6.
+
+
+
+cart component:
+
+
 testing example:
 mkdir test
 cd test
